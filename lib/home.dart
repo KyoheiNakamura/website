@@ -4,6 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:url_launcher/link.dart';
 
 import 'theme/theme_builder.dart';
+import 'theme/theme_color_controller.dart';
 import 'theme/theme_toggle_button.dart';
 
 class Home extends StatelessWidget {
@@ -30,53 +31,57 @@ class Home extends StatelessWidget {
   }
 }
 
-class ProfileCard extends StatelessWidget {
+class ProfileCard extends HookConsumerWidget {
   const ProfileCard({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Card(
       margin: const EdgeInsets.all(24),
       elevation: 4,
-      child: Container(
-        width: 360,
-        height: 520,
-        padding: const EdgeInsets.all(24),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(16),
-              child: Image.asset(
-                'assets/images/profile.png',
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            const FittedBox(
-              child: Text(
-                'Kyohei Nakamura',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(16),
+        onTap: () => ref.read(themeColorControllerProvider.notifier).change(),
+        child: Container(
+          width: 360,
+          height: 520,
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(16),
+                child: Image.asset(
+                  'assets/images/profile.png',
                 ),
               ),
-            ),
-            const SizedBox(
-              height: 4,
-            ),
-            const FittedBox(
-              child: Text('Sheep and Goat, LLC'),
-            ),
-            const Spacer(),
-            const Align(
-              alignment: Alignment.centerRight,
-              child: SaGLogo(),
-            ),
-          ],
+              const SizedBox(
+                height: 16,
+              ),
+              const FittedBox(
+                child: Text(
+                  'Kyohei Nakamura',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 4,
+              ),
+              const FittedBox(
+                child: Text('Sheep and Goat, LLC'),
+              ),
+              const Spacer(),
+              const Align(
+                alignment: Alignment.centerRight,
+                child: SaGLogo(),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -95,6 +100,7 @@ class SaGLogo extends HookConsumerWidget {
       target: LinkTarget.blank,
       builder: (context, followLink) => IconButton(
         onPressed: followLink,
+        padding: const EdgeInsets.all(16),
         icon: ThemeBuilder(
           builder: (context, brightness) => SvgPicture.asset(
             brightness == Brightness.light

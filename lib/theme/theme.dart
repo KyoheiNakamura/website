@@ -1,8 +1,8 @@
-import 'dart:math';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+
+import 'theme_color_controller.dart';
 
 part 'theme.g.dart';
 
@@ -11,10 +11,11 @@ ThemeData theme(
   ThemeRef ref, {
   required Brightness brightness,
 }) {
+  final themeColor = ref.watch(themeColorControllerProvider);
   final baseTheme = ThemeData(
     brightness: brightness,
     useMaterial3: true,
-    colorSchemeSeed: getRandomColor(),
+    colorSchemeSeed: themeColor,
     pageTransitionsTheme: PageTransitionsTheme(
       builders: kIsWeb
           ? {
@@ -50,12 +51,4 @@ class NoTransitionsBuilder extends PageTransitionsBuilder {
   ) {
     return child!;
   }
-}
-
-Color getRandomColor() {
-  final random = Random();
-  final r = random.nextInt(256);
-  final g = random.nextInt(256);
-  final b = random.nextInt(256);
-  return Color.fromRGBO(r, g, b, 1);
 }
