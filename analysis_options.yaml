@@ -1,1 +1,19 @@
-include: package:flutter_lints/flutter.yaml
+# 参考: https://dart.dev/guides/language/analysis-options
+
+# 参考: https://pub.dev/packages/pedantic_mono
+include: package:pedantic_mono/analysis_options.yaml
+
+analyzer:
+  plugins:
+    - custom_lint
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+    - "lib/sandbox/**"
+    - "lib/**/firebase_options_*.dart"
+
+linter:
+  # 参考: https://dart-lang.github.io/linter/lints/index.html.
+  rules:
+    sort_pub_dependencies: false
+    prefer_relative_imports: true
