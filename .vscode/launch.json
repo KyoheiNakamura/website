@@ -1,0 +1,32 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // 開発時にはこちらを使用する。
+    {
+      "name": "Debug dev",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "lib/main.dart",
+      "args": [
+        "--web-port=5500",
+        "--web-renderer=html",
+      ]
+    },
+    // 開発時に sandbox を使用する場合はこちらを使用する。
+    {
+      "name": "Debug sandbox",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "program": "sandbox/main.dart",
+      "args": [
+        "--web-port=5500",
+        "--web-renderer=html",
+      ]
+    },
+  ]
+}
