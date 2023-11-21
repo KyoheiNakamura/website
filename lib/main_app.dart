@@ -15,6 +15,7 @@ class MainApp extends HookConsumerWidget {
     final themeMode = ref.watch(themeModeControllerProvider);
 
     return MaterialApp(
+      title: 'Kyohei Nakamura',
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeMode,

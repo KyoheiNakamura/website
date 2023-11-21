@@ -1,11 +1,11 @@
 {
-    "name": "website",
-    "short_name": "website",
+    "name": "Kyohei Nakamura",
+    "short_name": "Kyohei Nakamura",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Kyohei Nakamura のウェブサイト。",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
