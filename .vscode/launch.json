@@ -12,6 +12,7 @@
       "flutterMode": "debug",
       "program": "lib/main.dart",
       "args": [
+        "--device-id=chrome",
         "--web-port=5500",
         "--web-renderer=html",
       ]
@@ -24,6 +25,7 @@
       "flutterMode": "debug",
       "program": "sandbox/main.dart",
       "args": [
+        "--device-id=chrome",
         "--web-port=5500",
         "--web-renderer=html",
       ]
