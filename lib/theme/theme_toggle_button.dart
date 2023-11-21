@@ -21,7 +21,7 @@ class ThemeToggleButton extends HookConsumerWidget {
                 .toggleTheme(oppositeMode);
           },
           icon: Icon(
-            brightness == Brightness.light ? Icons.light_mode : Icons.dark_mode,
+            brightness == Brightness.light ? Icons.dark_mode : Icons.light_mode,
           ),
         );
       },
