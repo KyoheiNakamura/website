@@ -100,7 +100,6 @@ class SaGLogo extends HookConsumerWidget {
       target: LinkTarget.blank,
       builder: (context, followLink) => IconButton(
         onPressed: followLink,
-        padding: const EdgeInsets.all(16),
         icon: ThemeBuilder(
           builder: (context, brightness) => SvgPicture.asset(
             brightness == Brightness.light
