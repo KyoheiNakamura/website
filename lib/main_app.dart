@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'home.dart';
-import 'theme/theme.dart';
-import 'theme/theme_mode_controller.dart';
+import 'pages/home_page.dart';
+import 'controllers/theme.dart';
+import 'controllers/theme_mode_controller.dart';
 
 class MainApp extends HookConsumerWidget {
   const MainApp({super.key});
@@ -19,7 +19,7 @@ class MainApp extends HookConsumerWidget {
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: themeMode,
-      home: const Home(),
+      home: const HomePage(),
     );
   }
 }

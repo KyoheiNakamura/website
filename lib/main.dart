@@ -3,7 +3,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'main_app.dart';
-import 'shared_preferences/shared_preferences.dart';
+import 'data/shared_preferences.dart';
 
 Future<void> main() async {
   final prefs = await SharedPreferences.getInstance();
