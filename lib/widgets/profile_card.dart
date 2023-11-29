@@ -1,7 +1,9 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'sag_logo.dart';
+import 'meeting_record_bottom_sheet.dart';
 
 class ProfileCard extends HookConsumerWidget {
   const ProfileCard({
@@ -51,10 +53,16 @@ class ProfileCard extends HookConsumerWidget {
                 child: Text('Sheep and Goat, LLC'),
               ),
               const Spacer(),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: SaGLogo(),
+              ElevatedButton(
+                onPressed: () {
+                  showMeetingRecordBottomSheet(context: context);
+                },
+                child: const Text('button'),
               ),
+              // const Align(
+              //   alignment: Alignment.centerRight,
+              //   child: SaGLogo(),
+              // ),
             ],
           ),
         ),
